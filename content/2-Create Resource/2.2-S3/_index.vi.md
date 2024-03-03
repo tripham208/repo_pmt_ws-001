@@ -3,7 +3,7 @@ title : "Create S3 Bucket"
 date :  "`r Sys.Date()`" 
 weight : 1
 chapter : false
-pre : " <b> 2.1 </b> "
+pre : " <b> 2.2 </b> "
 ---
 ## Tạo S3 bucket
 
