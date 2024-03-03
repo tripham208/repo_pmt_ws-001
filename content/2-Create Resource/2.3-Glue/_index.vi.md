@@ -1,33 +1,96 @@
 ---
-title : "Network ACLs"
+title : "Glue"
 date :  "`r Sys.Date()`" 
 weight : 2
 chapter : false
 pre : " <b> 2.2 </b> "
 ---
+## Tạo Glue
 
-#### Network ACLs
+Chúng tôi sẽ tạo Glue Jobs, Glue Crawler, Glue Database
 
+### Tạo Glue Database
 
-* VPC sau khi khởi tạo sẽ có sẵn một network ACL mặc định và có thể được sửa đổi. Mặc định, nó cấp phép truy cập cho tất cả lưu lượng truy cập IPv4 hoặc IPv6 có thể đi ra hoặc đi vào VPC. 
-* Có thể tạo một network ACL tùy chỉnh và liên kết nó với một subnet. Mặc định các network ACL tùy chỉnh từ chối tất cả lưu lượng truy cập đi vào và đi ra, cho đến khi ta bổ sung rule cấp phép truy cập.
-* Từng subnet trong VPC phải được liên kết với một network ACL. Nếu subnet không được liên kết với một network ACL cụ thể thì subnet sẽ được tự động liên kết với network ACL mặc định.
-* Một network ACL có thể liên kết với nhiều subnet. Tuy nhiên, một subnet chỉ có thể liên kết với một network ACL tại một thời điểm. Khi liên kết network ACL mới với subnet,thì liên kết trước đó sẽ bị xóa.
-* Một network ACL chứa một danh sách các rule được đánh số khác nhau. AWS đánh giá các rule dựa trên số thứ tự được gán, bắt đầu với rule được đánh số thấp nhất, để xác định xem lưu lượng có được phép đi vào hay đi ra khỏi bất kỳ subnet nào được liên kết với network ACL hay không. 
-Số thứ tự lớn nhất có thể được gán cho rule là 32766 (tương đương số lượng rule lớn nhất của một network ACL là 32766).
-* Network ACL có các rule cấp phép đi vào hoặc đi ra tách biệt và rule có thể là cho phép hoặc từ chối lưu lượng.
-* Network ACL là dịch vụ Stateless, nghĩa là phản hồi đối với lưu lượng truy cập được phép đi vào, phải tuân theo rule đối với lưu lượng truy cập đi ra (và ngược lại).
+1. Truy cập bảng điều khiển Glue.:
+    - Truy cập bảng điều khiển Keo.
+    - Chọn **Database**.
+    - Chọn **Add Database**.
 
-#### Network ACL rules
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/027.png?featherlight=false&width=90pc)
 
-Có thể thêm hoặc xóa một rule khỏi network ACL mặc định hoặc tạo network ACL mới cho VPC. Khi thêm hoặc xóa một rule khỏi network ACL, các thay đổi sẽ tự động được áp dụng cho các subnet được liên kết với nó.
+    - Nhập tên cơ sở dữ liệu của bạn
+    - Nhập URI nhóm dàn dựng của bạn
+    - Chọn **Add Database**.
 
-Các thành phần của một network ACL rule:
-* **Rule number**. Rule bắt đầu được đánh giá bắt đầu với rule có số thứ tự thấp nhất. 
-Ngay khi rule đó match với lưu lượng truy cập, nó sẽ ngay lập tức được áp dụng cho dù nó mâu thuẫn với một rule nào đó được đánh số lớn hơn trong danh sách.
-* **Type**.loại lưu lượng, ví dụ SSH. Có thể chỉ định tất cả các loại lưu lượng truy cập hoặc phạm vi tùy chỉnh.
-* **Protocol**.  chỉ định giao thức cùng số giao thức chuẩn.
-* **Port range**. port hoặc dải port lắng nghe của lưu lượng truy cập. Ví dụ: HTTP là 80.
-* **Source**. [chỉ đối với Inbound rule] Xuất phát của lưu lượng truy cập (giá trị là dải CIDR).
-* **Destination**. [chỉ đối với Outbound rule] Điểm đến của lưu lượng truy cập (giá trị là dải CIDR).
-* **Allow/Deny**.  chỉ rõ là Cho phép hoặc Từ chối lưu lượng truy cập.
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/033.png?featherlight=false&width=90pc)
+
+### Tạo Glue Crawler
+
+1. Đặt thuộc tính trình thu thập thông tin, nguồn dữ liệu:
+    - Truy cập bảng điều khiển Keo.
+    - Chọn **Crawler**.
+    - Chọn **Create crawler**.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/034.png?featherlight=false&width=90pc)
+
+    - Nhập tên trình thu thập thông tin của bạn
+    - Chọn **Next**.
+    - Chọn **Add a data source**.
+    - Chọn thư mục đích của bạn trong nhóm dàn dựng.
+    - Chọn **Add an S3 data source**.
+      ![Hình ảnh](/repo_pmt_ws-001/images/2/046.png?featherlight=false&width=90pc)
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/047.png?featherlight=false&width=90pc)
+
+2. Đặt bảo mật:
+    - Chọn vai trò keo IAM của bạn.
+    - Chọn **Next**.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/048.png?featherlight=false&width=90pc)
+3. Đặt đầu ra:
+    - Chọn cơ sở dữ liệu dàn dựng của bạn.
+    - Chọn **Next**.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/049.png?featherlight=false&width=90pc)
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/050.png?featherlight=false&width=90pc)
+
+### Tạo Glue Jobs
+
+1. Tạo công việc dán keo.:
+    - Truy cập bảng điều khiển Keo.
+    - Chọn **ETL Jobs**.
+    - Chọn **Visual ETL**.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/051.png?featherlight=false&width=90pc)
+2. Thiết lập biến đổi trong Công việc Keo
+    - Chọn **Source**.
+    - Chọn **Amazon S3**.
+    - Nhập thư mục của bạn vào thùng thô
+    - Chọn định dạng dữ liệu đầu vào của bạn.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/052.png?featherlight=false&width=90pc)
+    - Chọn nguồn của bạn.
+    - Chọn **Target**.
+    - Chọn **Amazon S3**.
+    - Nhập thư mục của bạn vào thùng thô
+    - Chọn định dạng dữ liệu đầu ra của bạn.
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/053.png?featherlight=false&width=90pc)
+3. Thiết lập chi tiết công việc dán keo
+    - Nhập tên công việc keo của bạn
+    - Chọn vai trò keo IAM của bạn.
+    - Nhập số lượng công nhân
+    - Chọn nội dung keo đường dẫn tập lệnh của bạn.
+    - Chọn nội dung keo đường dẫn tạm thời của bạn.
+    - Chọn **Save**
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/054.png?featherlight=false&width=90pc)
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/055.png?featherlight=false&width=90pc)
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/056.png?featherlight=false&width=90pc)
+4. Chạy thử keo
+    - Chọn **Run**
+
+   ![Hình ảnh](/repo_pmt_ws-001/images/2/064.png?featherlight=false&width=90pc)

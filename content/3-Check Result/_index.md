@@ -1,11 +1,11 @@
 ---
 title : "Check result"
 date : "`r Sys.Date()`"
-weight : 6
+weight : 3
 chapter : false
-pre : " <b> 6. </b> "
+pre : " <b> 3. </b> "
 ---
-## Check result"
+## Check result
 
 
 ### Execute Step Function

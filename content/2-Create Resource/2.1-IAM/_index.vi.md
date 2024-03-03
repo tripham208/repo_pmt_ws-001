@@ -14,50 +14,54 @@ Chúng ta sẽ tạo vai trò IAM cho Glue, Step Function:
 
 1. Truy cập bảng điều khiển IAM:
   - Truy cập bảng điều khiển IAM.
-  - Trên thanh điều hướng bên trái chọn **Vai trò**
-  - Chọn **Tạo vai trò**.
+  - Trên thanh điều hướng bên trái chọn **Roles**
+  - Chọn **Create role**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/001.png?featherlight=false&width=90pc)
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/006.png?featherlight=false&width=90pc)
 
 2. Tạo vai trò cho Glue.
-  - Chọn **Dịch vụ AWS**.
-  - Nhập **Glue** vào "Ca sử dụng".
-  - Chọn **Tiếp theo**.
+  - Chọn **AWS Service**.
+  - Nhập **Glue** vào "Use case".
+  - Chọn **Next**.
 
-   ![Hình ảnh](/repo_pmt_ws-001/images/2/007.png?featherlight=false&width=90pc)
+![Image](/repo_pmt_ws-001/images/2/007.png?featherlight=false&width=90pc)
 
-  - Nhập **keo**
-  - Chọn **AWSGlueServiceRole**.
+- Nhập **glue**
+- Chọn **AWSGlueServiceRole**.
+- Nhập **s3**
+- Chọn **AmazonS3FullAccess**.
 
-   ![Hình ảnh](/repo_pmt_ws-001/images/2/008.png?featherlight=false&width=90pc)
-  - Nhập tên vai trò
-  - Chọn **Tạo vai trò**.
+![Image](/repo_pmt_ws-001/images/2/008.png?featherlight=false&width=90pc)
 
-   ![Hình ảnh](/repo_pmt_ws-001/images/2/009.png?featherlight=false&width=90pc)
+![Image](/repo_pmt_ws-001/images/2/061.png?featherlight=false&width=90pc)
+- Nhập Role name
+- Chọn **Create role**.
 
-   ![Hình ảnh](/repo_pmt_ws-001/images/2/010.png?featherlight=false&width=90pc)
+![Image](/repo_pmt_ws-001/images/2/009.png?featherlight=false&width=90pc)
+
+![Image](/repo_pmt_ws-001/images/2/062.png?featherlight=false&width=90pc)
 ### Tạo vai trò IAM cho Step Function
 1. Truy cập bảng điều khiển IAM:
   - Truy cập bảng điều khiển IAM.
-  - Trên thanh điều hướng bên trái chọn **Vai trò**
-  - Chọn **Tạo vai trò**.
+  - Trên thanh điều hướng bên trái chọn **Roles**
+  - Chọn **Create role**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/011.png?featherlight=false&width=90pc)
 
 2. Tạo vai trò cho Step Function.
-  - Chọn **Dịch vụ AWS**.
-  - Nhập **Step Function** vào "Ca sử dụng".
-  - Chọn **Tiếp theo**.
+  - Chọn **AWS Service**.
+  - Nhập **Step Function** vào "Use case".
+  - Chọn **Next**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/012.png?featherlight=false&width=90pc)
 
-  - Chọn **Tiếp theo**.
+  - Chọn **Next**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/013.png?featherlight=false&width=90pc)
   - Nhập tên vai trò
-  - Chọn **Tạo vai trò**.
+  - Chọn **Create role**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/014.png?featherlight=false&width=90pc)
 
@@ -65,9 +69,9 @@ Chúng ta sẽ tạo vai trò IAM cho Glue, Step Function:
 
 3. Cập nhật quyền.
   - Chọn vai trò chức năng bước của bạn.
-  - Chọn **Thêm quyền**.
-  - Chọn **Truy cập quản trị**.
-  - Chọn **Thêm quyền**.
+  - Chọn **Add permissions**.
+  - Chọn **AdministrationAccess**.
+  - Chọn **Add permissions**.
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/016.png?featherlight=false&width=90pc)
 

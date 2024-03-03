@@ -1,24 +1,21 @@
 ---
-title : "Bắt đầu với Amazon VPC và AWS VPN Site to Site"
+title : "Tự động hóa Glue jobs, Glue crawlers bằng cách sử dụng Step function."
 date :  "`r Sys.Date()`" 
 weight : 1 
 chapter : false
 ---
 
-# Bắt đầu với Amazon VPC và AWS VPN Site to Site
+# Tự động hóa Glue jobs, Glue crawlers bằng cách sử dụng Step function.
 
 #### Tổng quan
 
-Trong phòng thí nghiệm này, bạn sẽ khám phá các cách tự động hóa glue jobs, glue crawler bằng cách sử dụng step function.
+Trong phòng thí nghiệm này, bạn sẽ khám phá các cách tự động hóa Glue jobs, Glue crawlers bằng cách sử dụng Step function.
 
-![VPC](../images/1-Introduce/serviceicon.png?featherlight=false&width=10pc)
+![Hình ảnh](/repo_pmt_ws-001/images/000.png)
 
 #### Nội dung
 
-1. [Giới thiệu VPC](1-introduce/)
-2. [Tường lửa trong VPC](2-firewallinvpc/)
-3. [Các bước chuẩn bị](3-prerequiste/) 
-4. [Tạo EC2 Server](4-createec2server/)
-5. [Cấu hình Site-to-Site VPN](5-vpnsitetosite/)
-6. [Dọn dẹp tài nguyên](4-Cleanup/)
-
+1. [Giới thiệu](1-Giới thiệu/)
+2. [Tạo tài nguyên](2-Create%20Resource/)
+3. [Kiểm tra kết quả](3-Kiểm tra%20Result/)
+4. [Tài nguyên sạch](4-Dọn dẹp/)
