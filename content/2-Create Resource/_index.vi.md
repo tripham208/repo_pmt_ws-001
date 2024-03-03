@@ -1,5 +1,5 @@
 ---
-title : ""
+title : "Chuẩn bị tài nguyên"
 date :  "`r Sys.Date()`" 
 weight : 2 
 chapter : false
