@@ -26,6 +26,7 @@ Chúng tôi sẽ tạo nhóm S3 cho dữ liệu thô, theo giai đoạn:
 
    ![Hình ảnh](/repo_pmt_ws-001/images/2/022.png?featherlight=false&width=90pc)
 2. Tải file thô lên
+    -  [Financial Sample](/repo_pmt_ws-001/Financial_Sample.csv)
     - Truy cập nhóm thô của bạn.
     - Chọn **Create Folder**.
     - Nhập tên thư mục của bạn

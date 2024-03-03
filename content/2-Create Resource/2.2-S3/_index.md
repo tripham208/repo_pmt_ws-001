@@ -27,6 +27,7 @@ We will create S3 bucket for raw, staging data:
 
     ![Image](/repo_pmt_ws-001/images/2/022.png?featherlight=false&width=90pc)
 2. Upload raw file
+   - You download [Financial Sample](https://github.com/tripham208/repo_pmt_ws-001/blob/main/static/Financial_Sample.csv)
    - Access your raw bucket.
    - Select **Create Folder**.
    - Enter your folder name
@@ -35,6 +36,7 @@ We will create S3 bucket for raw, staging data:
    ![Image](/repo_pmt_ws-001/images/2/028.png?featherlight=false&width=90pc)
 
    ![Image](/repo_pmt_ws-001/images/2/029.png?featherlight=false&width=90pc)
+
 
    - Access your folder 
    - Select **Upload**.
