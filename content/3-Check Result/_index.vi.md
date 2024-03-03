@@ -1,5 +1,5 @@
 ---
-title : "Check result"
+title : "Kiểm tra kết quả"
 date :  "`r Sys.Date()`" 
 weight : 3
 chapter : false

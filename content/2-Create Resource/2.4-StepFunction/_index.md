@@ -3,7 +3,7 @@ title : "Step Function"
 date :  "`r Sys.Date()`"
 weight : 1
 chapter : false
-pre : " <b> 2.1 </b> "
+pre : " <b> 2.4 </b> "
 ---
 
 ## Create Step Function
