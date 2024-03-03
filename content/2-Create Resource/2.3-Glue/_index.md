@@ -1,11 +1,10 @@
 ---
 title : "Glue"
 date :  "`r Sys.Date()`" 
-weight : 2
+weight : 1
 chapter : false
 pre : " <b> 2.3 </b> "
 ---
-
 ## Create Glue 
 
 We will create Glue Jobs, Glue Crawler, Glue Database
